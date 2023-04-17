@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lateef:wght@300&family=Montserrat&display=swap" rel="stylesheet">
+    
+    <!-- css -->
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <!-- script -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/scrolla.jquery.min.js"></script>
+    <script src="js/slide.js"></script>
+    <script src="js/main_script.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
+
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <!-- menuOpen -->
+            <div class="menuOpen">
+                <h1 class="logo"><a href="#"><img src="img/Logo-black.png" alt=""></a></h1>
+                <button class="open"><span class="lnr lnr-menu" alt="메뉴열기"></span></button>
+                <div class="menuWrap">
+                    <a href="#" class="close"><span class="lnr lnr-cross"></span></a>
+                    <a href="#" class="close en">Close</a>
+                    <ul class="tit en animate" data-animate="motion">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="gallery.html">Gallarey</a></li>
+                        <li><a href="Portfolio(process).html">Portfolio process</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <ul class="tit2">
+                        <li><a href=""><span>Mail</span> <br>
+                            kym0106471@naver.com <br> </a></li>
+                        <li><a href="">
+                            <span>Adress</span> <br>
+                            서울특별시 관악구 봉천동 <br>
+                        </a></li>
+                        <li><a href="">
+                            <span>Phone</span> <br>
+                            010-2898-0860 <br>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header_top">
+                <ul>
+                    <li><a href="https://junyeong199604.tistory.com/">[Tistory]</a></li>
+                    <li><a href="https://github.com/Junyeongjyk">[Git Hub]</a></li>
+                    <li><a href="gallery.html">[Clone Coding]</a></li>
+                    <li><a href="https://www.instagram.com/young_9604/">[Instargram]</a></li>
+                    <li><a href="#">[OpenKakao]</a></li>
+                    <li><a href="http://kym0106471.dothome.co.kr/20230330.pdf">[이력서]</a></li>
+                </ul>
+            </div>
+            <div class="inner">
+                <!-- <div class="ul1">
+                    <h3>Hello. <br> This is the portfolio of front-end Junyoung Kim.</h3>
+                    <p>안녕하세요. <br> 프론트엔드 김준영의 포트폴리오 입니다.</p>
+                </div> -->
+                <div class="main_img">
+                    <img src="img/main2.png" alt="">
+                </div>
+                <div class="ul2">
+                    <h2 class="main1">Portfolio(process)</h2>
+                </div>
+                <span class="scroll">KIM JUNYEONG</span>
+            </div>
+        </header>
+
+        <!-- visual -->
+        <section class="visual">
+            <h3 class="box animate" data-animate="fadeInLeft" data-duration=".5s" data-delay="0s">SITE STRUCTURE</h3>
+            <!-- 슬라이드 -->
+            <ul class="slide">
+                <li>
+                    <div class="img">
+                        <span class="imgBox"><img src="img/portfolioprocess.png" alt=""></span>
+                        <!-- overflow:hidden으로 감싸주기 위해 imgBox로 묶음 -->
+                        <span class="mask a"></span>
+                        <span class="mask b"></span>
+                        <span class="mask c"></span>
+                        <span class="mask d"></span>   
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <span class="imgBox"><img src="img/portfolioprocess.png" alt=""></span>
+                        <!-- overflow:hidden으로 감싸주기 위해 imgBox로 묶음 -->
+                        <span class="mask a"></span>
+                        <span class="mask b"></span>
+                        <span class="mask c"></span>
+                        <span class="mask d"></span>   
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <span class="imgBox"><img src="img/portfolioprocess.png" alt=""></span>
+                        <!-- overflow:hidden으로 감싸주기 위해 imgBox로 묶음 -->
+                        <span class="mask a"></span>
+                        <span class="mask b"></span>
+                        <span class="mask c"></span>
+                        <span class="mask d"></span>   
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <div class="information">
+            <div class="scrollBox" id="scroll">
+                <a href="#" class="scroll en">SCROLL DOWN <span><img src="img/scrolldown.png" alt=""></span></a>
+            </div>
+            <div class="mySwiper">
+                <h2 class="title">STYLE GUIDE</h2>
+                <p class="txt">컬러컨셉, 폰트와 로고에 대한 소개.</p>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/Group1.png" alt="">
+                        <span class="squer animate" data-animate="fadeInDown" data-duration="1s" data-delay="0s">
+                            <h2><span> COLOR <br>
+                            </span>배경색과 글색</h2>
+                        <p>색상은 이런식으로 구분했습니다.</p>
+                        </span>
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <img src="img/Group2.png" alt="">
+                        <span class="squer animate" data-animate="fadeInDown" data-duration="1s" data-delay="1s">
+                            <h2><span>TYPOGRAPHY <br> </span> 영문, 국문</h2>
+                            <p>영문과 국문의 글씨체를 구분했습니다.</p>
+                        </span>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/Group3.png" alt="">
+                        <span class="squer animate" data-animate="fadeInDown" data-duration="1s" data-delay="2s">
+                            <h2><span>LOGO  <br> </span>나만의 로고</h2>
+                            <p>산세리프 베이스로 제작했으며 <br> 심플함이 특징입니다.</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+        </div>
+
+        <section class="contents">           
+            <div class="content">
+                <h2 class="box animate" data-animate="fadeInLeft" data-duration=".9s" data-delay="0s">PORTFOLIO PRODUCTION PROCESS</h2>
+                <p class="box animate" data-animate="fadeInLeft" data-duration="1.2s" data-delay="0s">포트폴리오 제작과정</p>
+                <div class="inner">
+                    <ul class="list1">
+                        <li class="a"><div class="box animate" data-animate="fadeInLeft" data-duration=".5s" data-delay="0s">
+                            <img src="img/1677460517470.jpg" alt="">
+                        </div></li>
+                        <li class="b"><div class="box animate" data-animate="fadeInUp" data-duration="0.9s" data-delay="0">
+                            <img src="img/1677460553050.jpg" alt="">
+                        </div></li>
+                        <li class="c"><div class="box animate" data-animate="fadeInRight" data-duration="1.3s" data-delay="0">
+                            <img src="img/1677460975055.jpg" alt="">
+                        </div></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mindmap">
+                <h2 class="box animate" data-animate="fadeInDown" data-duration="0.9s" data-delay="0">MIND MAP & BRAIN STORMING</h2>
+                <p class="box animate" data-animate="fadeInDown" data-duration="1.2s" data-delay="0s">사이트 구성과 아이디어를 위해 작성한 마인드맵과 브레인스토밍</p>
+                <div class="inner">
+                    <ul class="list2">
+                        <li class="a"><div class="box animate" data-animate="fadeInLeft" data-duration="1s" data-delay="0s">
+                            <img src="img/mindmap1.jpg" alt="">
+                        </div>
+                            <b>Mind Map</b>
+                        </li>
+                        <li class="b"><div class="box animate" data-animate="fadeInRight" data-duration="1s" data-delay="0s">
+                            <img src="img/mindmap2.jpg" alt="">
+                        </div>
+                            <b>Brain Storming</b>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="idea">
+                <h2 class="box animate" data-animate="fadeInDown" data-duration="0.9s" data-delay="0">IDEA SKETCH & WIRE FRAME</h2>
+                <p class="box animate" data-animate="fadeInDown" data-duration="1.2s" data-delay="0s">사이트 구축을 위한 아이디어스케치와 와이어프레임</p>
+                <div class="inner">
+                    <ul class="list3">
+                        <li class="a"><div class="box">
+                            <ul>
+                                <li class="box animate" data-animate="fadeInLeft" data-duration=".7s" data-delay="0s"><a href="#"><img src="img/ideasketch1.jpg" alt=""></a></li>
+                                <li class="box animate" data-animate="fadeInUp" data-duration="1s" data-delay="0s"><a href="#"><img src="img/ideasketch2.jpg" alt=""></a></li>
+                                <li class="box animate" data-animate="fadeInRight" data-duration="1.5s" data-delay="0s"><a href="#"><img src="img/ideasketchmenu.jpg" alt=""></a></li>
+                            </ul>
+                        </div></li>
+                        <li class="b"><div class="box animate" data-animate="fadeInDown" data-duration="1.1s" data-delay="0s">
+                            <img src="img/ideasketch3.jpg" alt="">
+                        </div></li>
+                        <li class="c"><div class="box animate" data-animate="fadeInUp" data-duration="1.3s" data-delay="0s">
+                            <img src="img/ideasketch4.jpg" alt="">
+                        </div></li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </section>
+
+
+        <div class="thanks">
+            <div class="thanks_inner animate" data-animate="fadeInUp" data-duration="1.5s" data-delay="0s">
+                <h2>Thank you for reviewing my portfolio!</h2>
+                <p>제 포트폴리오를 봐주셔서 감사합니다!</p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="inner">
+                <div class="header_top">
+                    <h2>kym0106471@naver.com</h2>
+                    <div class="footer_img">
+                        <img src="img/main2.png" alt="">
+                    </div>
+                    <h2 class="number">010-2898-0860</h2>
+                    <ul>
+                        <li><a href="https://junyeong199604.tistory.com/">[Tistory]</a></li>
+                        <li><a href="https://github.com/Junyeongjyk">[Git Hub]</a></li>
+                        <li><a href="gallery.html">[Clone Coding]</a></li>
+                        <li><a href="https://www.instagram.com/young_9604/">[Instargram]</a></li>
+                        <li><a href="#">[OpenKakao]</a></li>
+                        <li><a href="http://kym0106471.dothome.co.kr/20230330.pdf">[이력서]</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+<script>
+    //1. swiper
+    var swiper = new Swiper(".mySwiper", {
+    autoplay: true, //자동재생
+    fade: true, //페이드인 효과 
+    autoplaySpeed:1000, //재생시간
+    slidesPerView: 2, //보여지는 갯수
+    spaceBetween: 30, //각각 간격
+    centeredSlides: true, //센터모드
+    loop: true, //루프
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+},
+});
+
+</script>
+</html>

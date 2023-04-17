@@ -1,0 +1,344 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lateef:wght@300&family=Montserrat&display=swap');
+/* font-family: 'Lateef', serif;
+font-family: 'Montserrat', sans-serif; */
+
+/*reset*/
+*{padding: 0; margin: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 300; font-size: inherit;}
+a {color:inherit; text-decoration: none;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+
+/*font-family: 'Montserrat', sans-serif;*/
+body {font-family: 'Montserrat', sans-serif; color:#000; background: #EEEDE9; font-size: 20px;}
+.wrap {width: 100%; overflow: hidden; }
+
+
+/* header, menu */
+/* menu open */
+.en {font-family: 'Lateef', serif; color: #000; display: inline-block; position: relative; transition: all 0.3s}
+.en:hover, .en:focus {transform: scale(1.2);}
+header .open {float:right; font-size: 40px; box-sizing: border-box; position: fixed; cursor: pointer; }
+header .logo {margin-left: 50px; padding-top: 30px;}
+header .logo img {width: 240px; height: 50px;}
+.menuOpen button.open {background: none; border: none; position: fixed; right: 0; top: 0; padding: 30px 22px; box-sizing: border-box;}
+.menuOpen button.open::before {content: ''; width: 100%; height: 100%; background: #EEEDE9; position: absolute; right: -100px; top: 0; z-index: -1; transition: all 0.5s;}
+.menuOpen button.open:hover:before, .menuOpen button.open:focus:before {right: 0; cursor: pointer;}
+
+/* menu wrap */
+.menuOpen .menuWrap {width: 100%; height: 100vh; position: fixed; top: 0; right: 0; z-index: 9999; background: #EEEDE9;}
+.menuOpen .menuWrap .tit {color: #000000; font-family: 'Lateef', serif; position: absolute; left: 20%; top: 50%; transform: translateY(-50%); font-size: 100px;}
+.menuOpen .menuWrap .tit li a {display: inline-block; position: relative; transition: all 0.3s;}
+.menuOpen .menuWrap .tit li a:hover, .menuOpen .menuWrap .tit li a:focus {transform: translateX(10px); color: #fff;}
+.menuOpen .menuWrap .tit li a::after {position: absolute; width: 0%; height: 2px; background: #333; bottom: -5px; left: 0; position: absolute; transition: all 0.3s; content: '';}
+.menuOpen .menuWrap .tit li a:hover::after, .menuOpen .menuWrap .tit li a:focus::after {width: 100%;}
+.menuOpen .menuWrap .close:first-child {position: absolute; top: 10%; transform: translateY(-50%); left: 30px; font-size: 30px;}
+.menuOpen .menuWrap .close.en {position: absolute; right: 50px; top: 50px; font-size: 25px; border-bottom: 1px solid #000; color: #000;}
+
+.menuOpen .menuWrap .tit2 {color: #555555;  position: absolute; right: 20%; top: 65%; transform: translateY(-50%); font-size: 20px; font-weight: 80px; text-align: right;}
+.menuOpen .menuWrap .tit2 li {margin-bottom: 20px;}
+.menuOpen .menuWrap .tit2 li:nth-child(2) {font-size: 20px;}
+.menuOpen .menuWrap .tit2 span {font-family: 'Lateef', serif; font-size: 30px; color: #D9D9D9;}
+.menuOpen .menuWrap .tit2 li a {display: inline-block; position: relative; transition: all 0.3s;}
+.menuOpen .menuWrap .tit2 li a:hover, .menuOpen .menuWrap .tit li a:focus {transform: scale(1.1); color: #000000;}
+.menuOpen .menuWrap .tit2 li a::after {position: absolute; width: 0%; height: 2px; background: #333; bottom: -5px; left: 0; position: absolute; transition: all 0.3s; content: '';}
+.menuOpen .menuWrap .tit2 li a:hover::after, .menuOpen .menuWrap .tit li a:focus::after {width: 100%;}
+
+
+/* menuwrap 열기 */
+.menuOpen .menuWrap {width: 0; transition: 0s; overflow: hidden; transform: skewY(40deg); opacity: 0;}
+.menuOpen .menuWrap.on {width: 100%; right: 0; transform: skewY(0deg); opacity: 1; transition: 0.5s;}
+.menuOpen .menuWrap ul {display: none;}
+.menuOpen .menuWrap.on ul {display: block;}
+
+/* header */
+header {width: 100%; height: 100vh;} 
+header .scroll {position: absolute; right: -3%; top: 40%; font-size: 14px; font-weight: bold; color: #000; transform: rotate(-270deg);}
+header .header_top {margin-top: 30px;}
+header h3 {margin-top: 100px;  width: 500px; height: 100px; position: absolute; left: 0; top: 20%; font-family: 'Lateef', serif; font-size: 30px; } 
+header p {margin-top: 100px; width: 400px; height: 100px; margin-top: -20px; position: absolute; left: 0; top: 40%; margin-top: 20px; } 
+header h3::before, header p::before {
+    position: absolute;
+    content: '';
+    bottom: 2px;
+    left: 0; right: 0;
+    height: 2px;
+    background-color: #000;
+    opacity: 0;
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+    -webkit-transition: opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
+    transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);}
+header h3:hover::before, header p:hover::before {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);}
+header p:hover::before {transform: translateY(-20px);}
+
+.main {
+	width: 800px;
+	white-space: nowrap;
+	overflow: hidden;
+	animation: cursor 0.3s step-start, 
+    text 1s steps(100);
+}
+
+.about_main {
+	width: 500px;
+	white-space: nowrap;
+	overflow: hidden;
+	animation: cursor 0.3s step-start, 
+    text 1.5s steps(100);
+}
+
+.main1 {
+	width: 1500px;
+	white-space: nowrap;
+	overflow: hidden;
+	animation: cursor 0.3s step-start, 
+    text 1s steps(400);
+}
+
+@keyframes cursor {
+	0%, 100% { 
+    height: 0px; 
+  }
+}
+
+@keyframes text {
+	0% { 
+    width: 0; 
+  }
+	100% { 
+    width:1400px; 
+  }
+}
+
+/* 공통 inner, ul */
+.inner {height: 100vh; width: 1500px; height: 100%; margin: 0 auto; display: flex; justify-content: center;}
+.ul2 {position: absolute; margin-top: 570px;}
+.inner h2 {font-size: 250px; display: flex; justify-content: center; font-family: 'Lateef', serif; margin-top: -80px; position: relative;}
+
+.inner h2:after { content: ""; position: absolute; left: 0; bottom: 100px; width: 0px; height: 2px; margin: 5px 0 0; transition: all 0.2s ease-in-out; transition-duration: 0.3s; opacity: 0; background-color: #000;}
+.inner h2:hover:after{width: 100%; opacity: 1;}
+
+.inner {position: relative; opacity: 0; top: 1em; animation: animateinner 1s ease-in-out forwards;}
+.inner:nth-child(4n) { animation-delay: 0.2s; }
+.inner:nth-child(4n+1) { animation-delay: 0.3s; }
+.inner:nth-child(4n+3) { animation-delay: 0.2s; }
+.inner:nth-child(4n+2) { animation-delay: 0.5s; }
+
+@keyframes animateinner {
+    to {
+  opacity: 1;
+  top: 0;} 
+}
+
+/* 공통 header_top */
+.header_top {text-align: center;}
+.header_top ul {justify-content: center; display: flex; }
+.header_top ul li {margin-left: 10px;}
+.header_top ul li a {display: inline-block; position: relative; transition: all 0.3s;}
+.header_top ul li a:hover, .header_top ul li a:focus {transform: scale(1.1); color: #fff;}
+.header_top ul li:last-child {line-height: 25px;}
+
+/* header, visual 공통 메인 이미지 */
+.main_img {margin: 0 auto; width: 450px; height: 600px; position: absolute; margin-top: 50px;} 
+.inner img {width: 450px; height: 600px; margin-top: 30px; opacity: 0.9;}
+.main_img img:hover {
+   filter: grayscale(0%);
+   transition: .5s ease-in-out;
+} 
+
+.main_img img { position: relative;
+    filter: grayscale(100%);
+    transition: .5s ease-in-out;}
+
+
+/* visual */
+section.visual {margin: 0 auto; height: 100vh; width: 1600px; margin-top: 120px; position: relative;}
+section.visual .slide {padding-top: 4.7%;}
+h3 {font-family: 'Lateef', serif; font-size: 75px; position: absolute; top: 13%; z-index: 10;}
+section.visual .img {margin: 0 auto; width: 100%;  position: relative; }
+section.visual .img .imgBox {display: block; width: 100%; overflow: hidden;}
+section.visual .img .imgBox img {width: 100%;}
+
+section.visual .img .mask {display: block; position: absolute; width: 0.1px; height: 100%; top:0; background-color: rgba(255,255,255, 0.16);}
+section.visual .img .mask.a {left: 0%;}
+section.visual .img .mask.b {left: 25%;}
+section.visual .img .mask.c {left: 50%;}
+section.visual .img .mask.d {left: 75%;}
+
+section.visual .slick-active .img .mask.a {animation-name: mask; animation-duration: 0.4s;}
+section.visual .slick-active .img .mask.b {animation-name: mask; animation-duration: 0.6s;}
+section.visual .slick-active .img .mask.c {animation-name: mask; animation-duration: 0.8s;}
+section.visual .slick-active .img .mask.d {animation-name: mask; animation-duration: 1s;}
+
+/* mask animation */
+@keyframes mask {
+    0% {width:25%; background: #000;}
+    50% {width:25%; background: #000;}
+    99% {background: #000;}
+}
+
+@keyframes slide-up {
+    0% {opacity: 0;}
+    40% {opacity: 0; transform: translateY(40px);}
+}
+section.visual .slick-active .title h2 {animation-name: slide-up; animation-duration: 1.5s;}
+section.visual .slick-active .title p {animation-name: slide-up; animation-duration: 2.2s;}
+section.visual .menu {animation-name: slide-up; animation-duration: 2.8s;}
+section.visual .slick-active .imgBox img {transform: scale(1); animation-name: scaleani; animation-duration: 5.2s;}
+@keyframes scaleani {
+    0% {transform: scale(1.3);}
+    30% {transform: scale(1.3);}
+}
+/* visual slick-dots */
+.slick-dots {position: absolute; right: 4.5%; bottom: 30px;}
+.slick-dots li button {text-indent: -9999px; width: 12px; height: 12px; border: none; cursor:pointer; margin-bottom: 15px; }
+
+/* 슬라이드 하단 게이지바 애니메이션 */
+.visual .slick-active::after {content: ''; width: 100%; height: 5px; background: #000; position: absolute; left: 0; bottom: 0; animation-name: bar; animation-duration: 5s;}
+@keyframes bar {
+    0%{width: 0%;}
+}
+
+/* information */
+.scrollBox {width: 1600px; margin: 0 auto; margin-bottom: 150px;}
+.scrollBox .scroll {display: block; width: 350px; height: 60px; background: #d9d9d9; line-height: 60px; padding-left: 25px; box-sizing: border-box; font-size: 20px; letter-spacing: 2px; position: relative;}
+.scrollBox .scroll span {width: 60px; height: 60px; position: absolute; right: 0; top: 0; animation: scroll linear 0.8s 0s infinite;}
+.scrollBox .scroll span img {width: 100%;}
+.inner {width: 1200px; margin: auto; position: relative;}
+
+
+@keyframes scroll {
+    0% {top: 0px;}
+    50% {top: 7px;}
+    100% {top: 0px;}
+}
+
+.information .inner {position: relative;}
+.information .inner .list {width: 48%; }
+.information .inner li {margin-bottom: 30px;}
+.information .inner li a {display: block; width: 100%; height: 100%; border-radius: 10px; overflow: hidden; position: relative;}
+.information .inner li a img {width: 100%; }
+.information .inner li a span {display: none;}
+.information .inner .fix { position: absolute; width: 45%; height: 100%; right: 0; top: 0;}
+.information .inner .fix .text { position: absolute; bottom: 10%;}
+
+/* on 클래스 붙었을 때 */
+.information .inner .fix .text.on {position: fixed; bottom: 50%; transform: translateY(-50%);}
+.information .inner .list li a.on::after, .information .inner .list li a:hover::after {content: ''; width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: rgba(41,41,41,.3);}
+.information .inner .list li a.on span, .information .inner .list li a:hover span {position: absolute; display: block; z-index: 1; width: 100%; left: 0; top: 50%; transform: translateY(-50%); text-align: center; color: #fff; font-size: 35px; font-style: italic;}
+.information .inner .list li a.on span b, .information .inner .list li a:hover span b {font-family: 'Montserrat', sans-serif; font-style: normal;}
+
+/* swiper */
+.information {width: 100%; height: 100vh; margin: 0 auto; position: relative; overflow: hidden; }
+.information .mySwiper {width: 100%; margin: auto 0;}
+.information .mySwiper .swiper-wrapper {margin-top: 60px;}
+.information .mySwiper .swiper-slide {transform: scale(0.7); transition: transform 0.5s;}
+.information .mySwiper .swiper-slide img {width: 100%;}
+.information .mySwiper .title {font-size: 75px; color: #000; text-align: center; margin-bottom: 20px;  font-family: 'Lateef', serif;}
+.information .mySwiper .txt {font-size: 20px; color: #000; text-align: center; margin-bottom: 20px;}
+.swiper-wrapper .swiper-slide .imgBox img {width: 100%;}
+.swiper-slide .squer {display: block; width: 200px; height: 100%; background: rgba(0,0,0,.05);
+ position: absolute; right: 0; top:0; z-index: 100;}
+.swiper-wrapper .swiper-slide span {font-size: 75px; margin-bottom: 10px; font-family: 'Lateef', serif; color: #000;}
+.swiper-wrapper .swiper-slide h2 {font-size: 20px; font-weight: bold; margin-bottom: 120px; color: #555555;  letter-spacing: 2px;}
+.swiper-wrapper .swiper-slide p {font-size: 12px;}
+
+.information .swiper-slide.swiper-slide-active {transform: scale(1);}
+.information .swiper-button-next {position: absolute; right: 20%; top: 60%;}
+.information .swiper-button-prev {position: absolute; left: 20%; top: 60%;}
+
+/* content */
+.content {width: 100%; height: 100vh; } 
+.content h2 {font-family: 'Lateef', serif; color: #000000; font-size: 75px; position: absolute; width: 50%; top: 315%; left: 8%; z-index: 10;}  
+.content p {font-size: 20px;  position: absolute; top: 326%; left: 8%; z-index: 10; color: #000;}
+.content .inner {margin: 0 auto; width: 1600px; height: 100vh; }
+.content .list1 {display: flex; flex-wrap: nowrap; position: relative;  justify-content: space-between; padding-top: 200px;}
+.content .inner .list1 li {flex-shrink: 0!important; width: 480px; height: 600px; box-sizing: border-box;}
+.content .inner .list1 li:nth-child(2) {margin-top: 100px; margin-left: 80px; margin-right: 80px;}
+.content .inner .list1 li .box {width: 100%; height: 100%; border-radius: 30px; position: relative; background:#fff; overflow: hidden; }
+.content .inner .list1 li img {width: 800px; height: 600px; position: absolute; top: -5%; right: -5%; max-width: initial;}
+.content .inner .list1 li:last-child img { right: -40%;}
+.content .inner .list1 li img:hover {
+    filter: grayscale(0%);
+    transition: .5s ease-in-out;} 
+.content .inner .list1 li img {
+    filter: grayscale(100%);
+    transition: .5s ease-in-out;}    
+
+
+/* mindmap */
+.mindmap {background: #fff;}
+.mindmap h2 {font-family: 'Lateef', serif; position: absolute; top: 415%; left: 8%; color: #000000; font-size: 83px; width: 50%;}
+.mindmap p {font-size: 20px; color: #000; position: absolute; top: 426%; left: 8%; z-index: 10;}
+.mindmap .inner {margin: 0 auto; width: 1600px; height: 100vh;}
+.mindmap .inner .list2 {flex-wrap: nowrap; position: relative; display: flex; padding-top: 15%; justify-content: space-between; }
+.mindmap .inner .list2 li {flex-shrink: 0!important; width: 700px; height: 600px; box-sizing: border-box;}
+.mindmap .inner .list2 li:first-child {margin-right: 200px;}
+.mindmap .inner .list2 li .box {width: 100%; height: 100%; border-radius: 30px; position: relative; background:#000; overflow: hidden; margin-bottom: 20px;}
+.mindmap .inner .list2 li img {width: 100%; height: 650px; position: absolute; top: -7%;} 
+.mindmap b {font-size: 20px;}
+
+
+/* idea */
+.idea h2 {font-family: 'Lateef', serif; top: 518%; left: 8%; color: #000000; font-weight: normal; font-size: 75px;  position: absolute; width: 50%; z-index: 10;}
+.idea p {font-size: 20px;  position: absolute; top: 530%; left: 8%; z-index: 10;}
+.idea .inner {margin: 0 auto; width: 1600px; height: 100vh;}
+.idea .inner .list3 {display: flex; flex-wrap: nowrap; position: relative;  justify-content: space-between;}
+.idea .inner .list3 li {float: left; flex-shrink: 0!important; width: 500px; height: 800px; box-sizing: border-box; padding-top: 250px; margin-right: -30px;}
+.idea .inner .list3 li .box {width: 100%; height: 100%; position: relative; } 
+.idea .inner .list3 li .box {width: 100%; height: 100%; position: relative; } 
+
+.idea .inner .list3 .a li:first-child img {width: 220px; height: 350px; position: absolute; top: -10%; left: -19%;}
+.idea .inner .list3 .a li:nth-child(2) img {width: 220px; height: 350px; position: absolute; top: -110%; left: 40%;}
+.idea .inner .list3 li:nth-child(2) img {width: 300px; height: 600px; position: absolute; top: -5%; left: 0%;}
+.idea .inner .list3 li:nth-child(3) img {width: 300px; height: 600px; position: absolute; top: -5%; left: -19%;}
+.idea .inner .list3 .a li:last-child img {width: 320px; height: 220px; position: absolute; top: -210%; left: 237%;}
+
+
+/* thanks */
+.thanks {width: 100%; height: 100vh; background: #fff;}
+.thanks .thanks_inner {width: 1500px; height: 100vh;  margin: 0 auto; padding-top: 400px; text-align: center;}
+.thanks .thanks_inner h2 {font-size: 75px; font-weight: bold; }
+.thanks .thanks_inner p {font-size: 20px; margin-top: 10px;}
+
+/* footer */
+footer {width: 100%; height: 100vh;}
+footer .inner .header_top h2 {font-size: 75px; display: flex; justify-content: center; padding-top: 200px; font-family: 'Lateef', serif; margin-bottom: 40px;}
+footer ul {margin-top: 20px;}
+footer .footer_img img {width: 300px; height: 400px; margin-top: -10px; margin-bottom: -80px;}
+
+.footer_img img:hover {
+    filter: grayscale(0%);
+    transition: .5s ease-in-out;
+
+} 
+
+.footer_img img { position: relative;
+    filter: grayscale(100%);
+    transition: .5s ease-in-out;
+
+}
+
+footer .inner .header_top h2:after{content: "";position: absolute; left: 35px; top: 90%; bottom: 100px; width: 0px; height: 2px; margin: 5px 0 0; transition: all 0.2s ease-in-out; transition-duration: 0.3s;
+opacity: 0; background-color: #000;}
+footer .inner .header_top h2:hover:after{width: 90%; opacity: 1;}
+
+footer .inner .header_top .number:after{content: "";position: absolute; left: 160px; top: 90%; bottom: 100px; width: 0px; height: 2px; margin: 5px 0 0; transition: all 0.2s ease-in-out; transition-duration: 0.3s;
+    opacity: 0; background-color: #000;}
+footer .inner .header_top .number:hover:after{width: 55%; opacity: 1;}
+

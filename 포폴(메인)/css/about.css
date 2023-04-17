@@ -1,0 +1,432 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lateef:wght@300&family=Montserrat&display=swap');
+/* font-family: 'Lateef', serif;
+font-family: 'Montserrat', sans-serif; */
+
+/*reset*/
+*{padding: 0; margin: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 300; font-size: inherit;}
+a {color:inherit; text-decoration: none;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+
+
+/*font-family: 'Montserrat', sans-serif;*/
+body {font-family: 'Montserrat', sans-serif; color:#000; background: #EEEDE9; font-size: 20px;}
+.wrap {width: 100%; overflow: hidden; }
+
+
+
+/* header, menu */
+/* menu open */
+.en {font-family: 'Lateef', serif; color: #000; display: inline-block; position: relative; transition: all 0.3s}
+.en:hover, .en:focus {transform: scale(1.2);}
+header .open {float:right; font-size: 40px; box-sizing: border-box; position: fixed; cursor: pointer;}
+header .logo {margin-left: 50px; padding-top: 30px;}
+header .logo img {width: 240px; height: 50px;}
+.menuOpen button.open {background: none; border: none; position: fixed; right: 0; top: 0; padding: 30px 22px; box-sizing: border-box;}
+.menuOpen button.open::before {content: ''; width: 100%; height: 100%; background: #EEEDE9; position: absolute; right: -100px; top: 0; z-index: -1; transition: all 0.5s;}
+.menuOpen button.open:hover:before, .menuOpen button.open:focus:before {right: 0; cursor: pointer;}
+
+/* menu wrap */
+.menuOpen .menuWrap {width: 100%; height: 100vh; position: fixed; top: 0; right: 0; z-index: 9999; background: #EEEDE9;}
+.menuOpen .menuWrap .tit {color: #000000; font-family: 'Lateef', serif; position: absolute; left: 20%; top: 50%; transform: translateY(-50%); font-size: 100px;}
+.menuOpen .menuWrap .tit li a {display: inline-block; position: relative; transition: all 0.3s;}
+.menuOpen .menuWrap .tit li a:hover, .menuOpen .menuWrap .tit li a:focus {transform: translateX(10px); color: #fff;}
+.menuOpen .menuWrap .tit li a::after {position: absolute; width: 0%; height: 2px; background: #333; bottom: -5px; left: 0; position: absolute; transition: all 0.3s; content: '';}
+.menuOpen .menuWrap .tit li a:hover::after, .menuOpen .menuWrap .tit li a:focus::after {width: 100%;}
+.menuOpen .menuWrap .close:first-child {position: absolute; top: 10%; transform: translateY(-50%); left: 30px; font-size: 30px;}
+.menuOpen .menuWrap .close.en {position: absolute; right: 50px; top: 50px; font-size: 25px; border-bottom: 1px solid #000; color: #000;}
+
+.menuOpen .menuWrap .tit2 {color: #555555;  position: absolute; right: 20%; top: 65%; transform: translateY(-50%); font-size: 20px; font-weight: 80px; text-align: right;}
+.menuOpen .menuWrap .tit2 li {margin-bottom: 20px;}
+.menuOpen .menuWrap .tit2 li:nth-child(2) {font-size: 20px;}
+.menuOpen .menuWrap .tit2 span {font-family: 'Lateef', serif; font-size: 30px; color: #D9D9D9;}
+.menuOpen .menuWrap .tit2 li a {display: inline-block; position: relative; transition: all 0.3s;}
+.menuOpen .menuWrap .tit2 li a:hover, .menuOpen .menuWrap .tit li a:focus {transform: scale(1.1); color: #000000;}
+.menuOpen .menuWrap .tit2 li a::after {position: absolute; width: 0%; height: 2px; background: #333; bottom: -5px; left: 0; position: absolute; transition: all 0.3s; content: '';}
+.menuOpen .menuWrap .tit2 li a:hover::after, .menuOpen .menuWrap .tit li a:focus::after {width: 100%;}
+
+
+/* menuwrap 열기 */
+.menuOpen .menuWrap {width: 0; transition: 0s; overflow: hidden; transform: skewY(40deg); opacity: 0;}
+.menuOpen .menuWrap.on {width: 100%; right: 0; transform: skewY(0deg); opacity: 1; transition: 0.5s;}
+.menuOpen .menuWrap ul {display: none;}
+.menuOpen .menuWrap.on ul {display: block;}
+
+/* header */
+header {width: 100%; height: 100vh;} 
+header .scroll {position: absolute; right: -3%; top: 40%; font-size: 14px; font-weight: bold; color: #000; transform: rotate(-270deg);}
+header .header_top {margin-top: 30px;}
+header h3 {margin-top: 100px;  width: 500px; height: 100px; position: absolute; left: 0; top: 20%; font-family: 'Lateef', serif; font-size: 30px; } 
+header p {margin-top: 100px; width: 400px; height: 100px; margin-top: -20px; position: absolute; left: 0; top: 40%; margin-top: 20px; } 
+header h3::before, header p::before {
+    position: absolute;
+    content: '';
+    bottom: 2px;
+    left: 0; right: 0;
+    height: 2px;
+    background-color: #000;
+    opacity: 0;
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+    -webkit-transition: opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
+    transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);}
+header h3:hover::before, header p:hover::before {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);}
+header p:hover::before {transform: translateY(-20px);}
+
+.main {
+	width: 800px;
+	white-space: nowrap;
+	overflow: hidden;
+	animation: cursor 0.3s step-start, 
+    text 1s steps(100);
+}
+
+.about_main {
+	width: 500px;
+	white-space: nowrap;
+	overflow: hidden;
+	animation: cursor 0.3s step-start, 
+    text 1.5s steps(100);
+}
+
+.main1 {
+	width: 1500px;
+	white-space: nowrap;
+	overflow: hidden;
+	animation: cursor 0.3s step-start, 
+    text 1s steps(400);
+}
+
+@keyframes cursor {
+	0%, 100% { 
+    height: 0px; 
+  }
+}
+
+@keyframes text {
+	0% { 
+    width: 0; 
+  }
+	100% { 
+    width:1400px; 
+  }
+}
+
+/* 공통 inner, ul */
+.inner {height: 100vh; width: 1500px; height: 100%; margin: 0 auto; display: flex; justify-content: center;}
+.ul2 {position: absolute; margin-top: 570px;}
+.inner h2 {font-size: 250px; display: flex; justify-content: center; font-family: 'Lateef', serif; margin-top: -80px; position: relative;}
+
+.inner h2:after { content: ""; position: absolute; left: 0; bottom: 100px; width: 0px; height: 2px; margin: 5px 0 0; transition: all 0.2s ease-in-out; transition-duration: 0.3s; opacity: 0; background-color: #000;}
+.inner h2:hover:after{width: 100%; opacity: 1;}
+
+.inner {position: relative; opacity: 0; top: 1em; animation: animateinner 1s ease-in-out forwards;}
+.inner:nth-child(4n) { animation-delay: 0.2s; }
+.inner:nth-child(4n+1) { animation-delay: 0.3s; }
+.inner:nth-child(4n+3) { animation-delay: 0.2s; }
+.inner:nth-child(4n+2) { animation-delay: 0.5s; }
+
+@keyframes animateinner {
+    to {
+  opacity: 1;
+  top: 0;} 
+}
+
+/* About header */
+header .my { text-align: right; position: absolute; right: 0%; top: 30%; font-size: 15px; color: #000; }
+
+/* About visual */
+.visual .me { text-align: right; position: absolute; right: 0%; top: 35%; font-size: 15px; color: #000; line-height: 20px;}
+.visual .me span {font-family: 'Lateef', serif; font-size: 30px; line-height: 50px;}
+.visual .me span:first-child {margin-bottom: 20px;}
+.visual .me .me2 {margin-top: 100px;}
+
+/* 공통 어바웃 이너 */
+.about_inner {margin: 0 auto; height: 100vh; width: 1600px;}
+.about_inner h2 {float: left; top: 20%; left: 3%; color: #fff; font-weight: normal;}
+.about_inner span {font-size: 20px; font-family: 'Montserrat', sans-serif;}
+.about_inner .list1 {display: flex; flex-wrap: nowrap; position: relative; padding-top:20%; }
+.about_inner .list1 li {flex-shrink: 0!important; width: 500px; height: 600px; padding: 0 50px; box-sizing: border-box}
+.about_inner .list1 li .box {width: 100%; height: 100%; border-radius: 30px; position: relative; background:#fff; }    
+
+.about_inner .list2 {display: flex; flex-wrap: nowrap; position: relative; padding-top: 12%; }
+.about_inner .list2 li {flex-shrink: 0!important; width: 500px; height: 600px; padding: 0 50px; box-sizing: border-box}
+.about_inner .list2 li .box {width: 100%; height: 100%; border-radius: 30px; position: relative; background:#fff; } 
+.about_inner .list li.a .box {background: #D9D9D9;}
+.about_inner .list li.b .box {background: #EEEDE9;}
+.about_inner .list li.c .box {background: #FFF;}   
+
+/* 공통 header_top */
+.header_top {text-align: center;}
+.header_top ul {justify-content: center; display: flex; }
+.header_top ul li {margin-left: 10px;}
+.header_top ul li a {display: inline-block; position: relative; transition: all 0.3s;}
+.header_top ul li a:hover, .header_top ul li a:focus {transform: scale(1.1); color: #fff;}
+.header_top ul li:last-child {line-height: 25px;}
+
+/* header, visual 공통 메인 이미지 */
+.main_img {margin: 0 auto; width: 450px; height: 600px; position: absolute; margin-top: 50px;} 
+.inner img {width: 450px; height: 600px; margin-top: 30px; opacity: 0.9;}
+.main_img img:hover {
+   filter: grayscale(0%);
+   transition: .5s ease-in-out;
+} 
+
+.main_img img { position: relative;
+    filter: grayscale(100%);
+    transition: .5s ease-in-out;}
+
+
+/* visual */
+.visual {width: 100%; height: 100vh; background: #EEEDE9;}
+
+.visual_left h2 {font-size: 30px;  position: absolute; left: 0; top: 45%;}
+.visual_left2 h2 {font-size: 20px; position: absolute; left: 7%; top: 45%; font-family: 'Montserrat', sans-serif; line-height: 43px;}
+.visual_left2 h2 ul li:first-child, .visual_left2 h2 ul li:last-child {font-size: 15px;}
+.visual .inner {padding-top: 150px;}
+
+.visual_left h2 , .visual_left2 h2 {
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 0;
+    }
+.visual_left h2::after, .visual_left2 h2::after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #000;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;}
+.visual_left h2:hover::after, .visual_left2 h2:hover::after{ 
+    width: 100%; 
+    left: 0; 
+}
+
+
+/* 공통 컨텐츠 */
+.contents {font-family: 'Lateef', serif;}
+.contents h2 {float: right; right: -12.6%;  width: 430px; height: 100px; font-size: 83px; font-weight: bold;  margin-top: -135px; position: relative;}
+.contents .skill h2 {right: -9%;}
+.contents h2:after { content: ""; position: absolute; left: 0; top: 100px; width: 0; height: 2px; margin: 5px 0 0; transition: all 0.2s ease-in-out; transition-duration: 0.3s; opacity: 0; background-color: #000;}
+
+.contents h2:hover:after{
+    width: 230px;
+    opacity: 1;
+}
+.contents .skill h2:hover:after{
+    width: 250px;
+    opacity: 1;
+}
+.timeline h2:hover::after{
+    width: 295px;
+    opacity: 1;
+} 
+
+/* contents.keyword */
+.keyword {width: 100%; height: 100vh; font-family: 'Montserrat', sans-serif;}
+.keyword .con_inner {margin: 0 auto; height: 100vh; width: 1500px; padding-top: 200px; font-size: 41.5px;}
+.keyword .con_inner .going {display: flex; justify-content: space-between; }
+.keyword .con_inner .going li:nth-child(2) { margin-top: 30px; width: 300px; line-height: 50px; border-top: 1px solid black;}
+
+.keyword .con_inner .and li:first-child { width: 300px; border-top: 1px solid black; margin-top: 140px; line-height: 50px;}
+.keyword .con_inner .and li:nth-child(2) { margin-top: -30px; margin-left: 528px;}
+.keyword .con_inner .and li:nth-child(2) span {margin-top: 30px; font-family: 'Lateef', serif; font-size: 66.4px;}
+.keyword .con_inner .and li:last-child {float: right;}
+.keyword .con_inner .and li:last-child img {width: 400px; height: 400px; margin-top: -20px;}
+
+.keyword .con_inner strong {font-family: 'Lateef', serif; font-size: 66.4px;}
+
+.keyword .con_inner .and li:last-child img:hover {
+    filter: grayscale(0%);
+    transition: .5s ease-in-out;
+} 
+
+.keyword .con_inner .and li:last-child img { position: relative;
+filter: grayscale(100%);
+ transition: .5s ease-in-out;
+}
+
+.keyword .con_inner .slo_box2 {font-family: 'Montserrat', sans-serif;}
+.keyword .con_inner .slo_box2 h3 {font-size: 20px; font-weight: bold; margin-top: 150px; margin-bottom: 20px;}
+.keyword .con_inner .slo_box3 p {font-weight: normal; font-size: 15px; }
+
+
+/* Timeline */
+.timeline {width: 100%; height: 200vh; background: #FFF;}
+.timeline h2 {float: left; top: 20%; left: 0; font-weight: normal; color: #000000; }
+
+/* .timeline_inner1 */
+.timeline_inner {margin: 0 auto; height: 100vh; width: 1500px; }
+.timeline_inner .list {width: 100%; position: relative; top: 30%;}
+.timeline_inner .list span {display: block; width: 1500px; height: 3px; background: #000000; }
+
+.timeline_inner .list li {width: 17px; height: 17px; background: #D9D9D9; position: absolute;}
+.timeline_inner .list li.a {left: 0; top:-2px}
+.timeline_inner .list li.b {left: 25%;  transform: translateX(-50%); top:-2px;}
+.timeline_inner .list li.c {right: 50%; top: -2px;}
+.timeline_inner .list li.d {right: 25%; top: -2px;}
+.timeline_inner .list li.e {right: 0; top: -2px;}
+.timeline_inner .list li:before {content: ''; width: 100%; height: 100%; position: absolute; left: 50%; top:50%; margin-left: -3px; margin-top: -20px; animation: dot 1.5s infinite;}
+
+.timeline_inner ul {width: 100%; margin: 0 auto; top: 340%; position: absolute; margin-top: -10px;}
+.timeline_inner ul li {float: left; width: 19%; color: #000000; font-size: 12px; }
+.timeline_inner ul li h3 {font-size: 15px; margin-bottom: 20px; font-weight: normal; color:#000000; font-family: 'Montserrat', sans-serif; }
+
+/* .timeline_inner2 */
+.timeline_inner2 {margin: 0 auto; height: 100vh; width: 1500px;}
+.timeline_inner2 .list2 {width: 100%; position: relative; top: 20%;}
+.timeline_inner2 .list2 span {display: block; width: 1500px; height: 3px; background: #000000; }
+
+.timeline_inner2 .list2 li {width: 17px; height: 17px; background: #D9D9D9; position: absolute;}
+.timeline_inner2 .list2 li.a {left: 0; top:-2px}
+.timeline_inner2 .list2 li.b {left: 25%;  transform: translateX(-50%); top:-2px;}
+.timeline_inner2 .list2 li.c {right: 50%; top: -2px;}
+.timeline_inner2 .list2 li.d {right: 25%; top: -2px;}
+.timeline_inner2 .list2 li.e {right: 0; top: -2px;}
+.timeline_inner2 .list2 li:before {content: ''; width: 100%; height: 100%; position: absolute; left: 50%; top:50%; margin-left: -3px; margin-top: -20px; animation: dot 1.5s infinite;}
+
+.timeline_inner2 ul {width: 100%; margin: 0 auto; top: 430%; position: absolute; margin-top: -10px;}
+.timeline_inner2 ul li {float: left; width: 19%; color: #000000; font-size: 12px; }
+.timeline_inner2 ul li h3 {font-size: 15px; margin-bottom: 20px; font-weight: normal; color:#000000; font-family: 'Montserrat', sans-serif; margin-top: 20px;}
+
+/* dot의 무한반복애니메이션 */
+@keyframes dot {
+    100% {opacity: 1; transform: scale(3.5); opacity: 0;}
+}
+
+/* animation */
+@keyframes opacity-ani {
+    0% {opacity: 0;}
+    70% {opacity: 0;}
+}
+
+@keyframes slide-up2 {
+    0% {opacity: 0;}
+    70% {opacity: 0; transform: translateY(40px);}
+}
+
+.timeline_inner.motion h2 {animation-name: slide-up2; animation-duration: 1s; }
+.timeline_inner.motion .list span {animation-name: opacity-ani; animation-duration: 0.3s;}
+.timeline_inner.motion .list li.a {animation-name: opacity-ani; animation-duration: 0.5s;}
+.timeline_inner.motion .list li.b {animation-name: opacity-ani; animation-duration: 0.7s;}
+.timeline_inner.motion .list li.c {animation-name: opacity-ani; animation-duration: 0.9s;}
+.timeline_inner.motion .list li.d {animation-name: opacity-ani; animation-duration: 1.1s;}
+.timeline_inner.motion .list li.e {animation-name: opacity-ani; animation-duration: 1.3s;}
+.timeline_inner.motion ul li {animation-name: slide-up2; animation-duration: 1s;}
+.timeline_inner.motion ul li:nth-child(2) {animation-name: slide-up2; animation-duration: 1.2s;}
+.timeline_inner.motion ul li:nth-child(3) {animation-name: slide-up2; animation-duration: 1.4s;}
+.timeline_inner.motion ul li:nth-child(4) {animation-name: slide-up2; animation-duration: 1.6s;}
+.timeline_inner.motion ul li:last-child {animation-name: slide-up2; animation-duration: 1.8s;}
+
+.timeline_inner2.motion .list2 span {animation-name: opacity-ani; animation-duration: 0.3s;}
+.timeline_inner2.motion .list2 li.a {animation-name: opacity-ani; animation-duration: 0.5s;}
+.timeline_inner2.motion .list2 li.b {animation-name: opacity-ani; animation-duration: 0.7s;}
+.timeline_inner2.motion .list2 li.c {animation-name: opacity-ani; animation-duration: 0.9s;}
+.timeline_inner2.motion .list2 li.d {animation-name: opacity-ani; animation-duration: 1.1s;}
+.timeline_inner2.motion .list2 li.e {animation-name: opacity-ani; animation-duration: 1.3s;}
+.timeline_inner2.motion ul li {animation-name: slide-up2; animation-duration: 1s;}
+.timeline_inner2.motion ul li:nth-child(2) {animation-name: slide-up2; animation-duration: 1.2s;}
+.timeline_inner2.motion ul li:nth-child(3) {animation-name: slide-up2; animation-duration: 1.4s;}
+.timeline_inner2.motion ul li:nth-child(4) {animation-name: slide-up2; animation-duration: 1.6s;}
+.timeline_inner2.motion ul li:last-child {animation-name: slide-up2; animation-duration: 1.8s;}
+
+/* hobby */
+.hobby {width: 100%; height: 200vh; background: #000;}
+.hobby h2 {float: left; top: 20%; left: 0; font-weight: normal; color: #FFF; }
+.hobby .box {overflow: hidden;}
+.hobby .list1 li:nth-child(2) img {width: 100%; top: -18%;}
+.hobby .list1 li:nth-child(3) img {top: -23%;}
+.hobby .list2 li:nth-child(1) img {width: 100%; top: -22%;}
+.hobby .list2 li:nth-child(2) img {width: 100%; top: -22%;}
+.hobby .list2 li:nth-child(3) img {width: 100%; top: -22%;}
+.imgBox {width: 100%; height: 100%;  background: #000;}
+.imgBox img {width: 100%; position: absolute; top: 0%;}
+.hobby .box h2 {font-weight: normal; left: 10%;} 
+.hobby .list1 li:first-child h2 {top: 20%;}
+.hobby .list2 li:last-child h2 {top: 20%;}
+.imgBox h2 {top: 70%; color: #fff;}
+.imgBox p {position: absolute; font-family: 'Montserrat', sans-serif;  font-size: 15px; top: 71%; left: 5%; color: #fff; line-height: 2;}
+.hobby .box h3 {font-size: 50px;}
+
+
+
+/* 공통 tit 애니*/
+.tit3.motion span {transform: translate3d(0,0,0) skewY(0deg); overflow: hidden; }
+.tit3.motion span b {overflow: hidden; display: block; animation-name: textAni; animation-duration: 1s; font-weight: normal;}
+
+@keyframes textAni {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translate3d(0,40px,0) skewY(8deg); transform-origin: top left;}
+
+}
+
+/* visual .txt 텍스트 애니*/
+.txt2.motion p {transform: translate3d(0,0,0) skewY(0deg); overflow: hidden; }
+.txt2.motion p b {overflow: hidden; display: block; animation-name: textAni; animation-duration: 1s; font-weight: normal;}
+
+
+/* .img 모션*/
+.img.motion {position: relative; animation-name: imgAni; animation-duration: 1s;}
+
+@keyframes imgAni {
+    0% {transform: translateY(50px);}
+}
+.img.motion::after {content: ''; width: 100%; height: 0%; background: #EEEDE9; position: absolute; top: 0; left: 0; animation-name: mask; animation-duration: 1.2s;}
+
+@keyframes mask {
+    0% {height: 90%;}
+}
+.main_img img.motion::after {display: none;}
+
+
+/* thanks */
+.thanks {width: 100%; height: 100vh; background: #fff;}
+.thanks .thanks_inner {width: 1500px; height: 100vh;  margin: 0 auto; padding-top: 400px; text-align: center;}
+.thanks .thanks_inner h2 {font-size: 75px; font-weight: bold; }
+.thanks .thanks_inner p {font-size: 20px; margin-top: 10px;}
+
+/* footer */
+footer {width: 100%; height: 100vh;}
+footer .inner .header_top h2 {font-size: 75px; display: flex; justify-content: center; padding-top: 200px; font-family: 'Lateef', serif; margin-bottom: 40px;}
+footer ul {margin-top: 20px;}
+footer .footer_img img {width: 300px; height: 400px; margin-top: -10px; margin-bottom: -80px;}
+
+.footer_img img:hover {
+    filter: grayscale(0%);
+    transition: .5s ease-in-out;
+
+} 
+
+.footer_img img { position: relative;
+    filter: grayscale(100%);
+    transition: .5s ease-in-out;
+
+}
+
+footer .inner .header_top h2:after{content: "";position: absolute; left: 35px; top: 90%; bottom: 100px; width: 0px; height: 2px; margin: 5px 0 0; transition: all 0.2s ease-in-out; transition-duration: 0.3s;
+opacity: 0; background-color: #000;}
+footer .inner .header_top h2:hover:after{width: 90%; opacity: 1;}
+
+footer .inner .header_top .number:after{content: "";position: absolute; left: 160px; top: 90%; bottom: 100px; width: 0px; height: 2px; margin: 5px 0 0; transition: all 0.2s ease-in-out; transition-duration: 0.3s;
+    opacity: 0; background-color: #000;}
+footer .inner .header_top .number:hover:after{width: 55%; opacity: 1;}

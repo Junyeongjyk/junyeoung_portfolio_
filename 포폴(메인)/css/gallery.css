@@ -1,0 +1,379 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lateef:wght@300&family=Montserrat&display=swap');
+/* font-family: 'Lateef', serif;
+font-family: 'Montserrat', sans-serif; */
+
+/*reset*/
+*{padding: 0; margin: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 300; font-size: inherit;}
+a {color:inherit; text-decoration: none;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+
+/*font-family: 'Montserrat', sans-serif;*/
+body {font-family: 'Montserrat', sans-serif; color:#000; background: #EEEDE9; font-size: 20px;}
+.wrap {width: 100%; overflow: hidden; }
+
+/* header, menu */
+/* menu open */
+.en {font-family: 'Lateef', serif; color: #000; display: inline-block; position: relative; transition: all 0.3s}
+.en:hover, .en:focus {transform: scale(1.2);}
+header .open {float:right; font-size: 40px; box-sizing: border-box; position: fixed; cursor: pointer; z-index: 9999;}
+header .logo {margin-left: 50px; padding-top: 30px;}
+header .logo img {width: 240px; height: 50px;}
+.menuOpen button.open {background: none; border: none; position: fixed; right: 0; top: 0; padding: 30px 22px; box-sizing: border-box; position: fixed; z-index: 9999;}
+.menuOpen button.open::before {content: ''; width: 100%; height: 100%; background: #EEEDE9; position: absolute; right: -100px; top: 0; z-index: -1; transition: all 0.5s; }
+.menuOpen button.open:hover:before, .menuOpen button.open:focus:before {right: 0; cursor: pointer;}
+
+/* menu wrap */
+.menuOpen .menuWrap {width: 100%; height: 100vh; position: fixed; top: 0; right: 0; z-index: 9999; background: #EEEDE9;}
+.menuOpen .menuWrap .tit {color: #000000; font-family: 'Lateef', serif; position: absolute; left: 20%; top: 50%; transform: translateY(-50%); font-size: 100px;}
+.menuOpen .menuWrap .tit li a {display: inline-block; position: relative; transition: all 0.3s;}
+.menuOpen .menuWrap .tit li a:hover, .menuOpen .menuWrap .tit li a:focus {transform: translateX(10px); color: #fff;}
+.menuOpen .menuWrap .tit li a::after {position: absolute; width: 0%; height: 2px; background: #333; bottom: -5px; left: 0; position: absolute; transition: all 0.3s; content: '';}
+.menuOpen .menuWrap .tit li a:hover::after, .menuOpen .menuWrap .tit li a:focus::after {width: 100%;}
+.menuOpen .menuWrap .close:first-child {position: absolute; top: 10%; transform: translateY(-50%); left: 30px; font-size: 30px;}
+.menuOpen .menuWrap .close.en {position: absolute; right: 50px; top: 50px; font-size: 25px; border-bottom: 1px solid #000; color: #000;}
+
+.menuOpen .menuWrap .tit2 {color: #555555;  position: absolute; right: 20%; top: 65%; transform: translateY(-50%); font-size: 20px; font-weight: 80px; text-align: right;}
+.menuOpen .menuWrap .tit2 li {margin-bottom: 20px;}
+.menuOpen .menuWrap .tit2 li:nth-child(2) {font-size: 20px;}
+.menuOpen .menuWrap .tit2 span {font-family: 'Lateef', serif; font-size: 30px; color: #D9D9D9;}
+.menuOpen .menuWrap .tit2 li a {display: inline-block; position: relative; transition: all 0.3s;}
+.menuOpen .menuWrap .tit2 li a:hover, .menuOpen .menuWrap .tit li a:focus {transform: scale(1.1); color: #000000;}
+.menuOpen .menuWrap .tit2 li a::after {position: absolute; width: 0%; height: 2px; background: #333; bottom: -5px; left: 0; position: absolute; transition: all 0.3s; content: '';}
+.menuOpen .menuWrap .tit2 li a:hover::after, .menuOpen .menuWrap .tit li a:focus::after {width: 100%;}
+
+
+/* menuwrap 열기 */
+.menuOpen .menuWrap {width: 0; transition: 0s; overflow: hidden; transform: skewY(40deg); opacity: 0;}
+.menuOpen .menuWrap.on {width: 100%; right: 0; transform: skewY(0deg); opacity: 1; transition: 0.5s;}
+.menuOpen .menuWrap ul {display: none;}
+.menuOpen .menuWrap.on ul {display: block;}
+
+/* header */
+header {width: 100%; height: 100vh;} 
+header .scroll {position: absolute; right: -3%; top: 40%; font-size: 14px; font-weight: bold; color: #000; transform: rotate(-270deg);}
+header .header_top {margin-top: 30px;}
+header h3 {margin-top: 100px;  width: 500px; height: 100px; position: absolute; left: 0; top: 20%; font-family: 'Lateef', serif; font-size: 30px; } 
+header p {margin-top: 100px; width: 400px; height: 100px; margin-top: -20px; position: absolute; left: 0; top: 40%; margin-top: 20px; } 
+header h3::before, header p::before {
+    position: absolute;
+    content: '';
+    bottom: 2px;
+    left: 0; right: 0;
+    height: 2px;
+    background-color: #000;
+    opacity: 0;
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+    -webkit-transition: opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
+    transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);}
+header h3:hover::before, header p:hover::before {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);}
+header p:hover::before {transform: translateY(-20px);}
+
+.main {
+	width: 800px;
+	white-space: nowrap;
+	overflow: hidden;
+	animation: cursor 0.3s step-start, 
+    text 1s steps(100);
+}
+
+.about_main {
+	width: 500px;
+	white-space: nowrap;
+	overflow: hidden;
+	animation: cursor 0.3s step-start, 
+    text 1.5s steps(100);
+}
+
+.main1 {
+	width: 1500px;
+	white-space: nowrap;
+	overflow: hidden;
+	animation: cursor 0.3s step-start, 
+    text 1s steps(400);
+}
+
+@keyframes cursor {
+	0%, 100% { 
+    height: 0px; 
+  }
+}
+
+@keyframes text {
+	0% { 
+    width: 0; 
+  }
+	100% { 
+    width:1400px; 
+  }
+}
+
+/* 공통 inner, ul */
+.inner {height: 100vh; width: 1500px; height: 100%; margin: 0 auto; display: flex; justify-content: center;}
+.ul2 {position: absolute; margin-top: 570px;}
+.inner h2 {font-size: 250px; display: flex; justify-content: center; font-family: 'Lateef', serif; margin-top: -80px; position: relative;}
+
+.inner h2:after { content: ""; position: absolute; left: 0; bottom: 100px; width: 0px; height: 2px; margin: 5px 0 0; transition: all 0.2s ease-in-out; transition-duration: 0.3s; opacity: 0; background-color: #000;}
+.inner h2:hover:after{width: 100%; opacity: 1;}
+
+.inner {position: relative; opacity: 0; top: 1em; animation: animateinner 1s ease-in-out forwards;}
+.inner:nth-child(4n) { animation-delay: 0.2s; }
+.inner:nth-child(4n+1) { animation-delay: 0.3s; }
+.inner:nth-child(4n+3) { animation-delay: 0.2s; }
+.inner:nth-child(4n+2) { animation-delay: 0.5s; }
+
+@keyframes animateinner {
+    to {
+  opacity: 1;
+  top: 0;} 
+}
+
+/* 공통 header_top */
+.header_top {text-align: center;}
+.header_top ul {justify-content: center; display: flex; }
+.header_top ul li {margin-left: 10px;}
+.header_top ul li a {display: inline-block; position: relative; transition: all 0.3s;}
+.header_top ul li a:hover, .header_top ul li a:focus {transform: scale(1.1); color: #fff;}
+.header_top ul li:last-child {line-height: 25px;}
+
+/* header, visual 공통 메인 이미지 */
+.main_img {margin: 0 auto; width: 450px; height: 600px; position: absolute; margin-top: 50px;} 
+.inner img {width: 450px; height: 600px; margin-top: 30px; opacity: 0.9;}
+.main_img img:hover {
+   filter: grayscale(0%);
+   transition: .5s ease-in-out;
+} 
+
+.main_img img { position: relative;
+    filter: grayscale(100%);
+    transition: .5s ease-in-out;}
+
+
+/* visual */
+.visual {width: 100%; height: 100vh; background: #EEEDE9;}
+
+.visual_left h2 {font-size: 30px;  position: absolute; left: 0; top: 45%;}
+.visual_left2 h2 {font-size: 20px; position: absolute; left: 7%; top: 45%; font-family: 'Montserrat', sans-serif; line-height: 43px;}
+.visual_left2 h2 ul li:first-child, .visual_left2 h2 ul li:last-child {font-size: 15px;}
+.visual .inner {padding-top: 150px;}
+
+.visual_left h2 , .visual_left2 h2 {
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 0;
+    }
+.visual_left h2::after, .visual_left2 h2::after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #000;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;}
+.visual_left h2:hover::after, .visual_left2 h2:hover::after{ 
+    width: 100%; 
+    left: 0; 
+}
+
+
+
+/*  gallery */
+.gallery {padding-top: 115px; width: 0; height: 0; box-sizing: border-box; position: relative; letter-spacing: -1px;}
+.gallery .mainText {font-weight: 400; line-height: 1.2; margin: 30px 0 150px 60px; display:inline-block ;}
+.gallery .mainText p {margin-top: -20px; overflow: hidden;}
+.gallery .subText {  margin-left: 20%;}
+.gallery .scroll {width: 500px; position: fixed; left: 60px; bottom:40px;}
+.gallery .svgAni {width: 60%; position: absolute; right: -5%; top:12%; transform: rotate(-10deg);}
+
+/* gallery.motion */
+.gallery.motion .mainText p {transform: translate3d(0,0,0) skewY(0deg); overflow: hidden;}
+.gallery.motion .mainText p span {display: block; animation-name: textAni; animation-duration: 1.8s;}
+.gallery.motion .mainText p:nth-child(2) span {animation-duration: 1.7s;}
+.gallery.motion .mainText p:nth-child(3) span {animation-duration: 1.5s;}
+
+@keyframes textAni {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translate3d(0,-90px,0) skewY(-10deg); transform-origin: top left;}
+}
+
+@keyframes textAni2 {
+    0% {opacity: 0;}
+    50% {opacity: 0; }
+}
+.visual.motion .subText {animation-name: textAni2 ;animation-duration: 2.3s;}
+
+
+/* con01 */
+.con01 {width: 100vw; height: 100vh; position: relative;}
+.con01 .videoWrap video {width:100vw; height: 100vh;object-fit: cover; position: absolute; left: 0; top:0;}
+.con01 .title {position: absolute; width: 100%; left: 0%; top:50%;  transform: translateY(-50%);
+text-align: center; color:#000; }
+.con01 strong {font-size: 30px;}
+.con01 .title h2 { font-weight: 300; font-size: 50px; letter-spacing: 2px; line-height:1.2;}
+
+/* con02 */
+.con02 {margin: 0 auto; width: 1600px;}
+.con02 .title {width: 100%; height: 100vh;font-size: 170px; line-height: 0.9; text-align: center; 
+padding-top:30vh; box-sizing: border-box;}
+.con02 .title .en2 {font-family: 'Lateef', serif; font-size: 200px; color: #d9d9d9;}
+.con02 .workList {display: flex; justify-content: space-between; flex-wrap: wrap; width: 70%; margin: 0 auto; }
+.con02 .workList li {width: 40%;  margin-top: 0px; }
+.con02 .workList li:nth-child(2n) {margin-top: 200px; }
+.con02 .workList li a {display: block; }
+.con02 .workList li a .imgBox img {width: 100%;  }
+.con02 .workList li a .textBox h3 {font-family: 'Lateef', serif; font-weight: normal; font-size: 50px; margin: 20px 0 10px; width: 500px;}
+.con02 .workList li a .textBox .info {display: flex; justify-content: space-between; color:#888;}
+
+/* con02- workList호버효과 */
+.con02 .workList li a .imgBox {position: relative; overflow: hidden; width: 500px; height: 650px; }
+.con02 .workList li a .imgBox:before {content: ''; width: 168px;height: 168px; border-radius: 100%; border:1px solid #fff; background: url(../img/readMore2.png) no-repeat center/ 35px; position: absolute; left: 50%; top:50%; transform: translate(-50%,-50%) rotate(45deg); z-index:1; transition: .3s;  opacity: 0;}
+
+
+.con02 .workList li a .imgBox:after {content: ''; width: 0px; height: 0px; border-radius: 100%; background:#fff url(../img/readMore3.png) no-repeat center/160px; position: absolute; left: 50%; top:50%; transform: translate(-50%, -50%); z-index:1; animation-name: spin; animation-duration: 10s; animation-iteration-count: infinite;
+animation-timing-function: linear; transition: .4s;}
+
+@keyframes spin {
+    0% {transform: translate(-50%, -50%) rotate(0deg);}
+    100% {transform: translate(-50%, -50%) rotate(360deg);}
+}
+
+.con02 .workList li a:hover .imgBox img {filter:brightness(40%); transition: .3s;}
+.con02 .workList li a:hover .imgBox:before {opacity: 1; z-index: 2;}
+.con02 .workList li a:hover .imgBox:after {width: 168px; height: 168px;}
+
+/* con03 -스킬영역 */
+.con03 {width: 100%; height: 100vh; position: relative; margin-top: 200px; overflow: hidden; color: #fff; }
+.con03 .textWrap {width: 70%; position:  absolute; left: 50%; top:50%; transform: translate(-50%, -50%); z-index:2; font-family: 'Lateef', serif;}
+.con03 .textWrap .title {font-size: 18px; overflow: hidden; color: #fff;}
+.con03 .textWrap ul li {font-size: 50px; line-height: 1.5; overflow: hidden;}
+.con03 .textWrap ul li .en2 {padding-left: 20px; }
+.con03 .textWrap .title {font-size: 75px; margin-bottom: 20px;}
+.con03 .textWrap .title p {font-family: 'Montserrat', sans-serif;}
+.en2 {font-family: 'Montserrat', sans-serif;}
+
+/* readMore버튼  */
+.btnWrap {position: absolute; right: -50%; top:60%; z-index:3;}
+.btnWrap a {display: block; width: 170px; height: 170px; border-radius: 100%; border: 2px solid #fff; position: relative; box-sizing: border-box; transition: 0.5s; }
+.btnWrap a img {width: 22%; position: absolute; left: 50%; top:50%; transform: translate(-50%,-50%) rotate(315deg); }
+.btnWrap a img:nth-child(2) {opacity: 0;}
+.btnWrap a:before {content: ''; width: 0%; height: 0%; border-radius: 100%; background: #fff url(../img/readMore3.png) no-repeat center/158px;  position: absolute; left:50%; top:50%; transform: translate(-50%,-50%); 
+animation-name: spin; animation-duration: 10s; animation-iteration-count: infinite; animation-timing-function: linear; transition: .4s;}
+
+.btnWrap a:hover {border-color: transparent;}
+.btnWrap a:hover img:nth-child(2) {opacity: 1;}
+.btnWrap a:hover:before {width: 100%; height: 100%;}
+
+
+.simply-scroll-clip {opacity: 0; filter: brightness(50%); overflow: hidden;}
+.simply-scroll .simply-scroll-list li {float: left; width: 400px;}
+.simply-scroll .simply-scroll-list li img {width: 150%;}
+
+/* con03 스킬모션 */
+.con03.motion .btnWrap {right: 50%; transition: 1.2s;}
+.con03.motion .simply-scroll-clip {transition: 1.2s; transform: translate(0, 0px) rotate(0deg) scale(1.1); transition-delay: 0.3s; opacity: 1; }
+.con03.motion .textWrap p { animation-name: textAni; animation-duration: 1.3s;}
+
+
+/* react */
+.react {width: 100%; height: 100vh; margin: 0 auto; background: #EEEDE9;}
+.react_inner {width: 1500px; height: 100vh; margin: 0 auto;}
+.react li {width: 590px; height: 550px;  margin-left: 30%; margin-top: 5%;}
+.react_inner h2 {text-align: center; font-family: 'Lateef', serif; font-size: 75px; padding-top: 10%;}
+.react_inner img {width: 590px; height: 550px;}
+.react_inner h3 {font-size: 20px; text-align: center; margin-top: 30px;}
+
+.react_inner ul li a {display: inline-block; position: relative; transition: all 0.3s;}
+.react_inner ul li a:hover, .react_inner ul li a:focus {transform: scale(1.1); opacity: 0.7;}
+
+/* project */
+.project {width: 100%; height: 100vh; margin: 0 auto; position: relative; overflow: hidden; }
+.project .mySwiper {width: 100%; margin: auto 0; padding: 100px 0;}
+.project .mySwiper .swiper-wrapper {margin-top: 60px;}
+.project .mySwiper .swiper-slide {transform: scale(0.7); transition: transform 0.5s;}
+.project .mySwiper .swiper-slide img {width: 100%;}
+.project .mySwiper .title {font-size: 75px; color: #000; text-align: center; margin-bottom: 20px;  font-family: 'Lateef', serif;}
+.project .mySwiper .txt {font-size: 20px; color: #000; text-align: center; margin-bottom: 20px;}
+
+.project .swiper-slide.swiper-slide-active {transform: scale(1);}
+.project .swiper-button-next {position: absolute; right: 20%; top: 60%;}
+.project .swiper-button-prev {position: absolute; left: 20%; top: 60%;}
+
+
+/* thanks */
+.thanks {width: 100%; height: 100vh; background: #fff;}
+.thanks .thanks_inner {width: 1500px; height: 100vh;  margin: 0 auto; padding-top: 400px; text-align: center;}
+.thanks .thanks_inner h2 {font-size: 75px; font-weight: bold; }
+.thanks .thanks_inner p {font-size: 20px; margin-top: 10px;}
+
+/* footer */
+footer {width: 100%; height: 100vh;}
+footer .inner .header_top h2 {font-size: 75px; display: flex; justify-content: center; padding-top: 200px; font-family: 'Lateef', serif; margin-bottom: 40px;}
+footer ul {margin-top: 20px;}
+footer .footer_img img {width: 300px; height: 400px; margin-top: -10px; margin-bottom: -80px;}
+
+.footer_img img:hover {
+    filter: grayscale(0%);
+    transition: .5s ease-in-out;
+
+} 
+
+.footer_img img { position: relative;
+    filter: grayscale(100%);
+    transition: .5s ease-in-out;
+
+}
+
+footer .inner .header_top h2:after{content: "";position: absolute; left: 35px; top: 90%; bottom: 100px; width: 0px; height: 2px; margin: 5px 0 0; transition: all 0.2s ease-in-out; transition-duration: 0.3s;
+opacity: 0; background-color: #000;}
+footer .inner .header_top h2:hover:after{width: 90%; opacity: 1;}
+
+footer .inner .header_top .number:after{content: "";position: absolute; left: 160px; top: 90%; bottom: 100px; width: 0px; height: 2px; margin: 5px 0 0; transition: all 0.2s ease-in-out; transition-duration: 0.3s;
+    opacity: 0; background-color: #000;}
+footer .inner .header_top .number:hover:after{width: 55%; opacity: 1;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
