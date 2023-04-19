@@ -240,14 +240,13 @@ padding-top:30vh; box-sizing: border-box;}
 .con02 .workList li {width: 40%;  margin-top: 0px; }
 .con02 .workList li:nth-child(2n) {margin-top: 200px; }
 .con02 .workList li a {display: block; }
-.con02 .workList li a .imgBox img {width: 100%;  }
+.con02 .workList li a .imgBox img {width: 100%; }
 .con02 .workList li a .textBox h3 {font-family: 'Lateef', serif; font-weight: normal; font-size: 50px; margin: 20px 0 10px; width: 500px;}
 .con02 .workList li a .textBox .info {display: flex; justify-content: space-between; color:#888;}
 
 /* con02- workList호버효과 */
 .con02 .workList li a .imgBox {position: relative; overflow: hidden; width: 500px; height: 650px; }
 .con02 .workList li a .imgBox:before {content: ''; width: 168px;height: 168px; border-radius: 100%; border:1px solid #fff; background: url(../img/readMore2.png) no-repeat center/ 35px; position: absolute; left: 50%; top:50%; transform: translate(-50%,-50%) rotate(45deg); z-index:1; transition: .3s;  opacity: 0;}
-
 
 .con02 .workList li a .imgBox:after {content: ''; width: 0px; height: 0px; border-radius: 100%; background:#fff url(../img/readMore3.png) no-repeat center/160px; position: absolute; left: 50%; top:50%; transform: translate(-50%, -50%); z-index:1; animation-name: spin; animation-duration: 10s; animation-iteration-count: infinite;
 animation-timing-function: linear; transition: .4s;}

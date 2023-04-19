@@ -69,14 +69,14 @@ https://junyeongjyk.github.io/dopda/돕다
 
 https://junyeongjyk.github.io/react-todo-app/ 리액트 앱
 
-https://github.com/Junyeongjyk/junyeoung_portfolio-.git 포폴
+https://junyeongjyk.github.io/junyeoung_portfolio/ 포폴
 
 http://kym0106471.dothome.co.kr/20230330.pdf
 http://kym0106471.dothome.co.kr/programming.pdf
 http://kym0106471.dothome.co.kr/UI.pdf
 http://kym0106471.dothome.co.kr/UI_test.pdf
 
-
+http://kym0106471.dothome.co.kr/developer.pdf
 
 
 
